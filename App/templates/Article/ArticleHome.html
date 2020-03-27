@@ -1,0 +1,32 @@
+{% extends 'Base.html' %} 
+
+{% block title %}Article Home{% endblock %} 
+
+{% block content %}
+
+<h1 class="display-3 text-center">Article Home</h1>
+
+<a href="/article/articlelist" class="badge badge-primary">Article List</a>
+
+
+<div>
+    <h1><a href="{% url 'articlehome' %}">Article List</a></h1>
+</div>
+
+<div>
+    <a href="/article/create/">
+        <span>Add New Article</span>
+        <ul>
+            {% for Aricle in Articles %}
+            <a href="{{ Aricle.get_absolute_url }}"><h3>{{ Aricle.id }}.{{ Aricle.title }}</h3>
+              
+            </a>
+            <a href="{% url 'articleupdate' id=Aricle.id %}">Update</a>
+            <a href="{% url 'articledelete' id=Aricle.id %}">Delete</a>
+            {% endfor %}
+        </ul>
+    </a>
+</div>
+
+
+{% endblock %}

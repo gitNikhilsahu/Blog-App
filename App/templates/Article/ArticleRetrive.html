@@ -1,0 +1,18 @@
+{% extends 'Base.html' %}
+
+{% block title %} RETRIVE {% endblock %}
+
+{% block content %}
+
+<div>
+    <h1><a href="{% url 'articlehome' %}">Home<a></h1>
+</div>
+
+<div>
+    <h3><u>{{ instance.title }} details</u></h3>
+    <h4>id: {{ instance.id }}</h4><br>
+    <h4>description: {{ instance.description }}</h4><br>
+</div>
+
+
+{% endblock %}
